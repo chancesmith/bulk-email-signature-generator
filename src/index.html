@@ -24,12 +24,14 @@
           
           <h1>Bulk Email Signature Generator</h1>
           <p>Files will begin downloading immediately based on the excel file the exists.</p>
-          <button class="btn btn-success" onClick="downloadSigantures();"></button>
+          <button class="btn btn-success" onClick="downloadSignatures()">Download All Signatures</button>
+          <button class="btn btn-default" onClick="downloadSingleSignature()">Download Single Signature</button>
 
         </div>
       </div>
     </div> <!-- /container -->
     
+    <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="./FileSaver.js-master/FileSaver.min.js"></script>
     <script src="./js/main.js"></script>
   </body>
