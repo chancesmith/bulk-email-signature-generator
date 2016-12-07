@@ -1,0 +1,27 @@
+{
+  "name": "bulk-email-signature-generator",
+  "version": "1.0.0",
+  "description": "Upload excel file to build/download multiple email signatures to local computer.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chancesmith/bulk-email-signature-generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chancesmith/bulk-email-signature-generator/issues"
+  },
+  "homepage": "https://github.com/chancesmith/bulk-email-signature-generator#readme",
+  "dependencies": {
+    "file-saver": "^1.3.3"
+  },
+  "devDependencies": {
+    "babel-preset-latest": "^6.16.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2"
+  }
+}
