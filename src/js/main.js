@@ -9,15 +9,34 @@ let formatPhoneNumber = (number) => {
   return numberTailored
 }
 
+let updateCSVRowCount = () => {
+	d3.csv("./signatures-data.csv", function(data) {
+	  let team = data,
+	  		count = 0
+
+		for (let member of team) {
+			count ++
+		}
+
+		$("#rowCount span").text(count)
+	})
+}
+
+$(document).ready(function() {
+  updateCSVRowCount()
+});
+
 let downloadSignatures = () => {
 	d3.csv("./signatures-data.csv", function(data) {
-	  let team = data
-
+	  let team = data,
+	  		count = 0
 		for (let member of team) {
 			let firstName = member.firstName
 			let firstIntial = firstName.charAt(0)
-			let fileName = firstIntial + member.lastName + ".html"
+			let fileName = firstIntial + member.lastName + ".htm"
 			setupFile( buildSignaturesHTML(member), fileName.toLowerCase() )
+			$("#doneCount span").text(count)
+			count++
 		}
 
 	})
