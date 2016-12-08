@@ -3,8 +3,8 @@ let removeSpecialCharacters = (string) => {
 }
 
 let formatPhoneNumber = (number) => {
-  const numberStripped = removeSpecialCharacters(number)
- 	const numberTailored = numberStripped.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "$1.$2.$3")
+  const numberStripped = removeSpecialCharacters(number),
+  			numberTailored = numberStripped.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "$1.$2.$3")
   
   return numberTailored
 }
@@ -31,9 +31,9 @@ let downloadSignatures = () => {
 	  let team = data,
 	  		count = 0
 		for (let member of team) {
-			let firstName = member.firstName
-			let firstIntial = firstName.charAt(0)
-			let fileName = firstIntial + member.lastName + ".htm"
+			let firstName = member.firstName,
+					firstIntial = firstName.charAt(0),
+					fileName = firstIntial + member.lastName + ".htm"
 			setupFile( buildSignaturesHTML(member), fileName.toLowerCase() )
 			$("#doneCount span").text(count)
 			count++
@@ -44,14 +44,11 @@ let downloadSignatures = () => {
 
 let downloadSingleSignature = () => {
 	d3.csv("./signatures-data.csv", function(data) {
-	  let team = data
-		let firstName = team[0].firstName
-		let firstIntial = firstName.charAt(0)
-		let fileName = firstIntial + team[0].lastName + ".htm"
-
-		console.log(buildSignaturesHTML(team[0]))
-		let signature = buildSignaturesHTML(team[0])
-		console.log(signature)
+	  let team = data,
+	  		firstName = team[0].firstName,
+	  		firstIntial = firstName.charAt(0),
+	  		fileName = firstIntial + team[0].lastName + ".htm",
+	  		signature = buildSignaturesHTML(team[0])
 
 		setupFile( signature, fileName.toLowerCase() )
 
